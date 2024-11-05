@@ -139,13 +139,20 @@
                 </tbody>
             </table>
         </div>
-        <a class="btn btn-default my-2" href="{{ route('users.tickets.index') }}">
-            {{ trans('global.back_to_list') }}
-        </a>
+        <hr>
+        <div class="row">
+            <div class="col-6">
+                <a class="btn btn-warning my-2" href="{{ route('users.tickets.index') }}" style="min-width: 120px;">
+                    {{ trans('global.back') }}
+                </a>
+            </div>
 
-        <a href="{{ route('users.tickets.edit', $ticket->id) }}" class="btn btn-primary">
-            @lang('global.edit') @lang('cruds.ticket.title_singular')
-        </a>
+            <div class="col-6 text-right">
+                <a href="{{ route('users.tickets.edit', $ticket->id) }}" class="btn btn-primary" style="min-width: 120px;">
+                    @lang('global.edit') @lang('cruds.ticket.title_singular')
+                </a>
+            </div>
+        </div>
 
         <nav class="mb-3">
             <div class="nav nav-tabs">

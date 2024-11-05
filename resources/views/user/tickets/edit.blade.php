@@ -126,8 +126,16 @@
                     @endif
                 </div>
             @endif
-            <div>
-                <input class="btn btn-danger" type="submit" value="{{ trans('global.save') }}">
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <a href="{{ route("users.tickets.index") }}" class="btn btn-warning" style="min-width: 120px;">{{ trans('global.back') }}</a>
+
+                    <a href="{{ route("users.tickets.index") }}" class="btn btn-primary" style="min-width: 120px;">{{ trans('global.view') }}</a>
+                </div> 
+                <div class="col-6 text-right">
+                    <input class="btn btn-danger" type="submit" value="{{ trans('global.save') }}" style="min-width: 120px;">
+                </div>
             </div>
         </form>
 

@@ -62,9 +62,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 });
 
 Route::group(['prefix' => 'user', 'as' => 'users.', 'namespace' => 'User', 'middleware' => ['auth']], function () {
-    Route::get('myTicket', function () {
-        return 'halaman my tickets'; 
-    });
     Route::delete('tickets/destroy', 'MyTicketsController@massDestroy')->name('tickets.massDestroy');
     Route::post('tickets/media', 'MyTicketsController@storeMedia')->name('tickets.storeMedia');
     Route::post('tickets/comment/{ticket}', 'MyTicketsController@storeComment')->name('tickets.storeComment');

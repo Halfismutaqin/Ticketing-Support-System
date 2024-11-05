@@ -133,12 +133,16 @@ class MyTicketsController extends Controller
 
     public function store(StoreTicketRequest $request)
     {
-        $ticket = Ticket::create($request->all());
-
+        // Tambahkan 'status_id' dengan nilai default 1
+        $ticketData = $request->all();
+        $ticketData['status_id'] = 1; // Menetapkan status_id secara manual
+    
+        $ticket = Ticket::create($ticketData);
+    
         foreach ($request->input('attachments', []) as $file) {
             $ticket->addMedia(storage_path('tmp/uploads/' . $file))->toMediaCollection('attachments');
         }
-
+    
         return redirect()->route('users.tickets.index');
     }
 

@@ -3,7 +3,6 @@
 @endphp
 
 @if ($user->name !== 'Admin' || !$user->roles->contains('id', 1))
-
     @can($viewGate)
     <a class="btn btn-xs btn-primary" href="{{ route('users.' . $crudRoutePart . '.show', $row->id) }}">
         {{ trans('global.view') }}
